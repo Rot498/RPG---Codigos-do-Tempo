@@ -1,0 +1,199 @@
+package rpg.codigodotempo;
+
+import java.util.*;
+import java.util.ArrayList;
+
+public class RPGCodigodoTempo {
+
+    static Scanner scanner = new Scanner(System.in);
+    static List<Fase> fases = new ArrayList<>();
+    static int pontuacao = 0;
+    static int errosTotais = 0;
+    static boolean modoFacil = true;
+    static long tempoTotal = 0;
+
+    public static void main(String[] args) {
+        inicializarFases();
+        mostrarNarrativaInicial();
+        selecionarModo();
+        iniciarJogo();
+    }
+
+    static void inicializarFases() {
+        fases.add(new Fase("1854", "Qual é o resultado da operação booleana: 1 AND 0?", "0",
+                Arrays.asList("1", "Nenhum"), "George Boole estabeleceu a lógica que guiaria os computadores."));
+        fases.add(new Fase("1937", "Qual é o valor decimal do número binário 1011?", "11",
+                Arrays.asList("13", "10"), "Alan Turing disse: 'A máquina pode pensar?' — e mudou tudo."));
+        fases.add(new Fase("1945", "Qual é o valor hexadecimal do número decimal 255?", "FF",
+                Arrays.asList("F1", "1F"), "O ENIAC foi o primeiro passo para a era digital moderna."));
+        fases.add(new Fase("1971", "Quantas combinações possíveis há em uma tabela verdade com 2 variáveis?", "4",
+                Arrays.asList("2", "3"), "Com o microprocessador, a era dos computadores pessoais começou!"));
+        fases.add(new Fase("1991", "Qual operador representa a operação lógica OU exclusivo (XOR)?", "^",
+                Arrays.asList("&", "|"), "Tim Berners-Lee criou a Web e nos conectou ao mundo."));
+        fases.add(new Fase("2025", "Converta o número binário 1110 para decimal.", "14",
+                Arrays.asList("13", "15"), "Python dominou o mundo da inteligência artificial."));
+    }
+
+    static void mostrarNarrativaInicial() {
+        System.out.println("=======================================");
+        System.out.println(" Olá, estamos no século XIX.");
+        System.out.println(" Para voltar para o seu tempo, você precisa passar por algumas etapas.");
+        System.out.println(" Resolva os desafios em cada época e boa sorte na sua jornada!");
+        System.out.println("=======================================\n");
+    }
+
+    static void selecionarModo() {
+        System.out.println("Selecione o nivel do jogo:");
+        System.out.println("[1] Fácil (3 tentativas por fase)");
+        System.out.println("[2] Difícil (1 tentativa por fase)");
+        while (true) {
+            System.out.print("Escolha: ");
+            String escolha = scanner.nextLine();
+            if (escolha.equals("1")) {
+                modoFacil = true;
+                break;
+            } else if (escolha.equals("2")) {
+                modoFacil = false;
+                break;
+            } else {
+                System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+    }
+
+    static void iniciarJogo() {
+        boolean jogar = true;
+
+        while (jogar) {
+            introducao();
+
+            pontuacao = 0;
+            errosTotais = 0;
+            tempoTotal = 0;
+
+            int faseAtual = 0;
+            while (faseAtual < fases.size()) {
+                long inicioFase = System.currentTimeMillis();
+                boolean passou = jogarFase(fases.get(faseAtual), faseAtual + 11);
+                long tempoFase = System.currentTimeMillis() - inicioFase;
+                tempoTotal += tempoFase;
+
+                System.out.printf("Tempo gasto nesta fase: %.2f segundos\n", tempoFase / 1000.0);
+
+                if (!passou) {
+                    mostrarMenu("MENU", "Reiniciar jogo");
+                    break;
+                }
+                faseAtual++;
+            }
+
+            if (faseAtual >= fases.size()) {
+                mensagemFinal();
+                mostrarMenu("MENU", "Reiniciar jogo");
+                jogar = false;
+            }
+        }
+    }
+
+    static void introducao() {
+        System.out.println("=======================================");
+        System.out.println(" Bem-vindo ao Jogo do Tempo!");
+        System.out.println("=======================================");
+        System.out.println("Seu avô era um inventor excêntrico que criou uma máquina do tempo.");
+        System.out.println("Você foi transportado para o século XIX!");
+        System.out.println("Para voltar para 2025, você precisa passar por 6 desafios históricos.");
+        System.out.println("Cada fase representa um ano importante na história da tecnologia.");
+        System.out.println("Você tem " + (modoFacil ? "3" : "1") + " tentativa(s) por fase.");
+        System.out.println("Boa sorte!\n");
+    }
+
+    static boolean jogarFase(Fase fase, int numeroFase) {
+        System.out.println("\n--- Fase " + numeroFase + " ---");
+        System.out.println("Ano: " + fase.getAno());
+        System.out.println(fase.getPergunta());
+
+        List<String> opcoes = new ArrayList<>();
+        opcoes.add(fase.getRespostaCorreta());
+        opcoes.addAll(fase.getAlternativasErradas());
+        Collections.shuffle(opcoes);
+
+        char[] letras = {'a', 'b', 'c'};
+        Map<Character, String> mapaAlternativas = new HashMap<>();
+        for (int i = 0; i < letras.length; i++) {
+            mapaAlternativas.put(letras[i], opcoes.get(i));
+        }
+        mostrarAlternativas(mapaAlternativas);
+
+        int tentativas = modoFacil ? 3 : 1;
+
+        while (tentativas > 0) {
+            System.out.print("Sua resposta: ");
+            String resposta = scanner.nextLine().trim().toLowerCase();
+
+            if (resposta.isEmpty()) {
+                System.out.println("Entrada vazia. Tente novamente.");
+                continue;
+            }
+
+            if (resposta.length() == 1 && mapaAlternativas.containsKey(resposta.charAt(0))) {
+                String respostaEscolhida = mapaAlternativas.get(resposta.charAt(0));
+                if (respostaEscolhida.equals(fase.getRespostaCorreta())) {
+                    System.out.println("Resposta correta!");
+                    System.out.println("Mensagem histórica: " + fase.getFraseHistorica());
+                    pontuacao += 10;
+                    return true;
+                } else {
+                    tentativas--;
+                    errosTotais++;
+                    if (tentativas > 0) {
+                        System.out.println("Resposta incorreta. Tentativas restantes: " + tentativas);
+                    }
+                }
+            } else {
+                System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+
+        System.out.println("Você errou todas as tentativas. Voltando ao início do jogo...");
+        return false;
+    }
+
+    static void mostrarAlternativas(Map<Character, String> mapaAlternativas) {
+        for (Map.Entry<Character, String> entrada : mapaAlternativas.entrySet()) {
+            System.out.println("(" + entrada.getKey() + ") " + entrada.getValue());
+        }
+    }
+
+    static void mostrarMenu(String titulo, String mensagem) {
+        while (true) {
+            System.out.println("\n--- " + titulo + " ---");
+            System.out.println("[1] " + mensagem);
+            System.out.println("[2] Sair do jogo");
+            System.out.print("Escolha uma opção: ");
+            String escolha = scanner.nextLine();
+
+            if (escolha.equals("1")) {
+                iniciarJogo();
+                break;
+            } else if (escolha.equals("2")) {
+                System.out.println("Obrigado por jogar! Até logo.");
+                return;
+            } else {
+                System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+    }
+
+    static void mensagemFinal() {
+        System.out.println("\n==============================");
+        System.out.println("PARABÉNS! VOCÊ CONCLUIU O JOGO!");
+        System.out.println("==============================");
+        System.out.println("Você viajou por momentos marcantes da história da tecnologia.");
+        System.out.println("Agora está de volta ao ano de 2025 com muito mais conhecimento.");
+        System.out.println("O legado do seu avô vive através de sua jornada.");
+        System.out.println("\n--- Relatório Final ---");
+        System.out.println("Pontuação total: " + pontuacao);
+        System.out.println("Erros cometidos: " + errosTotais);
+        System.out.printf("Tempo total gasto: %.2f segundos\n", tempoTotal / 1000.0);
+    }
+}
