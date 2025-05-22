@@ -1,0 +1,42 @@
+package rpg.codigodotempo;
+
+import java.util.List;
+
+public class Fase {
+
+    private String ano;
+    private String pergunta;
+    private String respostaCorreta;
+    private List<String> alternativasErradas;
+    private String fraseHistorica;
+
+    // Construtor
+    public Fase(String ano, String pergunta, String respostaCorreta, List<String> alternativasErradas, String fraseHistorica) {
+        this.ano = ano;
+        this.pergunta = pergunta;
+        this.respostaCorreta = respostaCorreta;
+        this.alternativasErradas = alternativasErradas;
+        this.fraseHistorica = fraseHistorica;
+    }
+
+    // Getters
+    public String getAno() {
+        return ano;
+    }
+
+    public String getPergunta() {
+        return pergunta;
+    }
+
+    public String getRespostaCorreta() {
+        return respostaCorreta;
+    }
+
+    public List<String> getAlternativasErradas() {
+        return alternativasErradas;
+    }
+
+    public String getFraseHistorica() {
+        return fraseHistorica;
+    }
+}
