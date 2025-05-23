@@ -99,7 +99,7 @@ public class RPGCodigodoTempo {
         System.out.println("=======================================");
         System.out.println(" Bem-vindo ao Jogo do Tempo!");
         System.out.println("=======================================");
-        System.out.println("Seu avô era um inventor excêntrico que criou uma máquina do tempo.");
+        System.out.println("Seu vô Nick era um inventor excêntrico que criou uma máquina do tempo.");
         System.out.println("Você foi transportado para o século XIX!");
         System.out.println("Para voltar para 2025, você precisa passar por 6 desafios históricos.");
         System.out.println("Cada fase representa um ano importante na história da tecnologia.");
@@ -190,7 +190,7 @@ public class RPGCodigodoTempo {
         System.out.println("==============================");
         System.out.println("Você viajou por momentos marcantes da história da tecnologia.");
         System.out.println("Agora está de volta ao ano de 2025 com muito mais conhecimento.");
-        System.out.println("O legado do seu avô vive através de sua jornada.");
+        System.out.println("O legado de seu vô Nick vive através de sua jornada.");
         System.out.println("\n--- Relatório Final ---");
         System.out.println("Pontuação total: " + pontuacao);
         System.out.println("Erros cometidos: " + errosTotais);
