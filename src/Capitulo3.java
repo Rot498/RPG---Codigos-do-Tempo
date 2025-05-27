@@ -1,8 +1,8 @@
-package teste.rpg;
+package src;
 
 import java.util.Scanner;
 
-public class TesteRPG {
+public class Capitulo3 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
