@@ -28,7 +28,7 @@ capitulo.iniciarCapitulo();
 
 public void iniciarCapitulo() {
 
-System.out.println("Escolha o nome do jogador:");
+System.out.println("Escolha o um jogador:");
 
 jogador = input.nextLine();
 
@@ -93,7 +93,7 @@ System.out.println("Um grupo de soldados te pede ajuda para decifrar uma mensage
 
 private void escolherCaminho() {
 
-System.out.println("Você vê uma porta iluminada e uma fresta escura ao lado.");
+System.out.println("Você vê uma porta e uma fresta escura ao lado.");
 
 System.out.println("1 - Entrar pela porta");
 
