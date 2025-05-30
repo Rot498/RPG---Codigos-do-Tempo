@@ -224,7 +224,7 @@ public class codigosdotempo {
                     estrelasCap1 += 2;
                     System.out.println("\n*Fragmento Histórico Desbloqueado:*\n" + fragmentoBabbage1);
                 } else {
-                    System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar de primeira.");
+                    System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar na primeira tentativa.");
                 }
                 return true;
             } else {
@@ -256,7 +256,7 @@ public class codigosdotempo {
                     estrelasCap1 += 3;
                     System.out.println("\n*Fragmento Histórico Desbloqueado:*\n" + fragmentoBabbage2);
                 } else {
-                    System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar de primeira.");
+                    System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar na primeira tentativa.");
                 }
                 return true;
             } else {
@@ -288,7 +288,7 @@ public class codigosdotempo {
                     estrelasCap1 += 1;
                     System.out.println("\n*Fragmento Histórico Desbloqueado:*\n" + fragmentoBabbage3);
                 } else {
-                    System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar de primeira.");
+                    System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar na primeira tentativa.");
                 }
                 return true;
             } else {
