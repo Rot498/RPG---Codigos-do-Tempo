@@ -10,7 +10,7 @@ public class codigosdotempo {
 
     // Variáveis Capítulo 1 (Babbage)
     private int estrelasCap1;
-    private String fragmentoBabbage1 = "Ino: A Invenção da Máquina de Diferenças\n" +
+    private String fragmentoBabbage1 = "Inicio: A Invenção da Máquina de Diferenças\n" +
             "Charles Babbage, um brilhante matemático do século XIX, ficou frustrado com os erros em tabelas matemáticas. Isso o levou a conceber a Máquina de Diferenças em 1822, um dispositivo mecânico para cálculos automáticos. Ele garantiu financiamento do governo britânico, marcando o começo de sua jornada na computação mecânica.";
     private String fragmentoBabbage2 = "Meio: A Inovação da Máquina Analítica e Desafios\n" +
             "Durante a construção da Máquina de Diferenças, Babbage idealizou a Máquina Analítica (1837), um projeto ainda mais ambicioso e o precursor do computador moderno, com memória e programação por cartões perfurados. No entanto, ele enfrentou enormes obstáculos financeiros e tecnológicos, nunca conseguindo construir uma versão completa de suas máquinas.";
