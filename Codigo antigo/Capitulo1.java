@@ -186,6 +186,6 @@ public class Capitulo1 {
             }
         }
 
-        scanner.close();
+        
     }
 }
