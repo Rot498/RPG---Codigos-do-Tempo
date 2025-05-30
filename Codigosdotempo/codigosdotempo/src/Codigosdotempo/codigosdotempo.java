@@ -302,37 +302,42 @@ public class codigosdotempo {
     }
 
     // --- CAPÍTULO 2: O CÓDEX (ALAN TURING) ---
-    private boolean iniciarCapitulo2() {
+   private boolean iniciarCapitulo2() {
         boolean capituloConcluido = false;
         fragmentosTuringCap2 = 0; // Zera fragmentos para o capítulo 2 a cada tentativa
 
-        while (!capituloConcluido) {
-            System.out.println("╔════════════════════════════╗");
-            System.out.println("║     CAPÍTULO 2: O CÓDEX    ║");
-            System.out.println("╚════════════════════════════╝\n");
+     while (!capituloConcluido) {
+    System.out.println("╔════════════════════════════╗");
+    System.out.println("║     CAPÍTULO 2: O CÓDEX    ║");
+    System.out.println("╚════════════════════════════╝\n");
 
-            desenharMaquinaCap2();
-            introducaoCap2();
-            escolherCaminhoCap2();
+    desenharMaquinaCap2();
+    introducaoCap2();
 
-            if (!desafioTuring1()) {
-                voltarInicioCap2();
-                continue; // Reinicia o loop do capítulo 2
-            }
+    if (!escolherCaminhoCap2()) {
+        voltarInicioCap2();
+        continue;
+    }
 
-            if (!desafioTuring2()) {
-                voltarInicioCap2();
-                continue; // Reinicia o loop do capítulo 2
-            }
+    if (!desafioTuring1()) {
+        voltarInicioCap2();
+        continue;
+    }
 
-            if (!desafioTuring3()) {
-                voltarInicioCap2();
-                continue; // Reinicia o loop do capítulo 2
-            }
+    if (!desafioTuring2()) {
+        voltarInicioCap2();
+        continue;
+    }
 
-            conclusaoCap2();
-            System.out.println("Parabéns, você concluiu todos os desafios com " + fragmentosTuringCap2 + "/3 fragmentos de Turing!");
-            capituloConcluido = true; // Marca o capítulo como concluído
+    if (!desafioTuring3()) {
+        voltarInicioCap2();
+        continue;
+    }
+
+    conclusaoCap2();
+    System.out.println("Parabéns, você concluiu todos os desafios com " + fragmentosTuringCap2 + "/3 fragmentos de Turing!");
+    capituloConcluido = true;
+
         }
         return capituloConcluido; // Retorna true se o capítulo foi concluído
     }
@@ -353,18 +358,23 @@ public class codigosdotempo {
         System.out.println("Um grupo de soldados te pede ajuda para decifrar uma mensagem secreta dos inimigos.\n");
     }
 
-    private void escolherCaminhoCap2() {
-        System.out.println("Você vê uma porta iluminada e uma fresta escura ao lado.");
-        System.out.println("1 - Entrar pela porta");
-        System.out.println("2 - Passar pela fresta");
-        int escolha = lerInteiro("Escolha: ");
-        if (escolha == 2) {
-            System.out.println("Você avança mais rapidamente pela fresta.\n");
-        } else {
-            System.out.println("A porta leva a um corredor com armadilhas. Você demora mais tempo.\n");
-        }
+   private boolean escolherCaminhoCap2() {
+    System.out.println("Você vê uma porta iluminada e uma fresta escura ao lado.");
+    System.out.println("1 - Entrar pela porta");
+    System.out.println("2 - Passar pela fresta");
+    int escolha = lerInteiro("Escolha: ");
+
+    if (escolha == 2) {
+        System.out.println("Você avança mais rapidamente pela fresta.\n");
+        return true;
+    } else {
+        System.out.println("A porta leva a um corredor com armadilhas.");
+        System.out.println("Você cai em uma armadilha e não resiste aos ferimentos.");
+        System.out.println("GAME OVER! Voltando ao início do capítulo...\n");
+        return false;
     }
 
+}
     private boolean desafioTuring1() {
         System.out.println("\n====================================================================");
         System.out.println("DESAFIO DE DECODIFICAÇÃO");
