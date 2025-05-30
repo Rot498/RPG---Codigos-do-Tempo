@@ -302,7 +302,7 @@ public class codigosdotempo {
     }
 
     // --- CAPÍTULO 2: O CÓDEX (ALAN TURING) ---
-   private boolean iniciarCapitulo2() {
+  private boolean iniciarCapitulo2() {
         boolean capituloConcluido = false;
         fragmentosTuringCap2 = 0; // Zera fragmentos para o capítulo 2 a cada tentativa
 
@@ -354,8 +354,8 @@ public class codigosdotempo {
 
     private void introducaoCap2() {
         System.out.println("Você acorda em um bunker militar em 1942. Tudo está em silêncio.");
-        System.out.println("Você se lembra da máquina do tempo e do caderno do seu avô.");
-        System.out.println("Um grupo de soldados te pede ajuda para decifrar uma mensagem secreta dos inimigos.\n");
+        System.out.println("Você se lembra da máquina do tempo e do caderno do seu avô\n.");
+        System.out.println("Ao andar pelo bunker, você se depara com a seguinte situação:");
     }
 
    private boolean escolherCaminhoCap2() {
@@ -379,7 +379,7 @@ public class codigosdotempo {
         System.out.println("\n====================================================================");
         System.out.println("DESAFIO DE DECODIFICAÇÃO");
         System.out.println("====================================================================");
-        System.out.println("Em determinado momento, uma mensagem codificada foi interceptada. Para decifrá-la, você precisa configurar os canais de rádio corretamente com base nas seguintes condições lógicas:");
+        System.out.println(" Ao passar pelo caminho correto, você encontra um grupo de militares, e após uma curta conversa eles percebem que você não é um inimigo, e eles deixam você se refugiar no banker, mesmo com certa desconfiança. Porém, em determinado momento, uma mensagem codificada foi interceptada. Você como herdeiro da genialidade de seu avô se voluntaria para decifrar a mensagem. Para decifrá-la, você precisa configurar os canais de rádio corretamente com base nas seguintes condições lógicas:");
         System.out.println("Antena de Alta Frequência (A) deve estar ativada E Filtro de Ruído (B) deve estar ativado OU Canal de Comunicação C deve estar desligado.");
         System.out.println("Ou seja: (A AND B) OR (NOT C)");
 
@@ -396,7 +396,7 @@ public class codigosdotempo {
 
             if (condicaoCorreta) {
                 System.out.println("\nMensagem decodificada com sucesso!");
-                System.out.println("Os Aliados obtiveram informações valiosas!\n");
+                System.out.println("Os Aliados obtiveram informações valiosas e começaram a confiar mais em você!\n");
                 if (i == 1) {
                     fragmentosTuringCap2++;
                     System.out.println("\n**** Fragmento de Turing desbloqueado! (" + fragmentosTuringCap2 + "/3) ***\n" + conteudoFragmentoTuring1 + "\n");
@@ -415,7 +415,7 @@ public class codigosdotempo {
         System.out.println("\n====================================================================");
         System.out.println("DESAFIO DO SISTEMA DE RADARES");
         System.out.println("====================================================================");
-        System.out.println("O sistema de defesa depende de dois radares, mas para evitar falhas e interferências, apenas um dos radares pode estar ativo por vez. (Lógica XOR)");
+        System.out.println("Você entendendo a história sabe que viajou para Segunda Guerra e que os Aliados precisa de ajuda para enfrentar o Eixo, entao novamente voce pede para ajudar na guerra. Você acompanha os soldados até uma torre de transmissão e descobre que osistema de defesa está sofrendo ataque aéreo e depende de dois radares, mas para evitar falhas e interferências, apenas um dos radares pode estar ativo por vez. (Lógica XOR)");
 
         for (int i = 1; i <= 3; i++) {
             System.out.println("\nTentativa " + i + " de 3:");
