@@ -47,7 +47,7 @@ public class codigosdotempo {
     public void iniciarAventuraCompleta() {
         // Introdução geral e nome do jogador (uma vez)
         System.out.println("====================================================================");
-        System.out.println("                     CÓDIGOS DO TEMPO                               ");
+        System.out.println("                     CÓDIGOS DO TEpo                              ");
         System.out.println("====================================================================");
         System.out.println("        ___");
         System.out.println("       /     \\");
