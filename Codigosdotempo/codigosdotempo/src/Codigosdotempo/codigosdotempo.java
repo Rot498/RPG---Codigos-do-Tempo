@@ -26,7 +26,7 @@ public class codigosdotempo {
     // Variáveis Capítulo 3 (Ada Lovelace / Futuro)
     private boolean fragmentoAda1Adquirido;
     private boolean fragmentoAda2Adquirido;
-    private boolean fragmentoAda3Adquirido;
+    private boolean fragmentoAda3Adquirido; 
     // O Cap 3 tem uma lógica de "estrelas" diferente, baseada em tentativas, exibida diretamente.
 
     public codigosdotempo() {
