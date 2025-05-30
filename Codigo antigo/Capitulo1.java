@@ -33,7 +33,7 @@ public class Capitulo1 {
         System.out.println("Pressione ENTER para começar sua aventura...");
         scanner.nextLine();
 
-        // Nome do jogador
+        
         System.out.println("====================================================================");
         System.out.println("DIGITE SEU NOME PARA ESTA MISSÃO:");
         System.out.println("====================================================================");
@@ -43,7 +43,7 @@ public class Capitulo1 {
         System.out.println("Pressione ENTER para acessar o menu...");
         scanner.nextLine();
 
-        // Menu principal
+       
         int opcao = 0;
         while (opcao != 4) {
             System.out.println("====================================================================");
@@ -57,7 +57,7 @@ public class Capitulo1 {
             System.out.println("====================================================================");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // limpar buffer
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1:
