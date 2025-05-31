@@ -6,7 +6,6 @@ public class codigosdotempo {
     private Scanner scanner;
     private String nomeJogador;
 
-    // Variáveis Capítulo 1 (Babbage)
     private int estrelasCap1;
     private String fragmentoBabbage1 = "Início: A Invenção da Máquina de Diferenças\n" +
             "Charles Babbage, um brilhante matemático do século XIX, ficou frustrado com os erros em tabelas matemáticas. Isso o levou a conceber a Máquina de Diferenças em 1822, um dispositivo mecânico para cálculos automáticos. Ele garantiu financiamento do governo britânico, marcando o começo de sua jornada na computação mecânica.";
@@ -15,17 +14,15 @@ public class codigosdotempo {
     private String fragmentoBabbage3 = "Fim: O Legado Póstumo do \"Pai do Computador\"\n" +
             "Babbage morreu em 1871 sem ver suas invenções concretizadas e amplamente reconhecidas. Apesar disso, suas ideias e projetos detalhados foram redescobertas e se tornaram fundamentais para o desenvolvimento dos computadores eletrônicos no século XX. Hoje, Charles Babbage é celebrado como o \"Pai do Computador\", um visionário que lançou as bases da era digital.";
 
-    // Variáveis Capítulo 2 (Turing)
-    private int fragmentosTuringCap2; // Usado como contador de estrelas/fragmentos para o Cap 2
+    private int fragmentosTuringCap2; 
     private String conteudoFragmentoTuring1 = "Alan Mathison Turing nasceu em 23 de junho de 1912, em Londres. Desde cedo demonstrou grande talento em matemática e lógica, apesar de ser considerado excêntrico por professores e colegas. Estudou no Kings College, na Universidade de Cambridge, onde se destacou por seu trabalho em matemática pura. Em 1936, Turing publicou o artigo On Computable Numbers, no qual propôs o conceito de uma máquina abstrata — hoje conhecida como Máquina de Turing. Essa ideia formou a base da computação moderna, ao definir matematicamente o que significa “calcular.";
     private String conteudoFragmentoTuring2 = "Com o início da Segunda Guerra Mundial, Turing foi recrutado para trabalhar em Bletchley Park, o centro de inteligência britânico. Lá, liderou a equipe responsável por quebrar o código da máquina Enigma, usada pelos nazistas para criptografar mensagens militares. Turing projetou uma máquina eletromecânica chamada Bombe, que acelerava a decodificação das mensagens criptografadas. Seu trabalho foi fundamental para o sucesso dos Aliados e estima-se que tenha encurtado a guerra em pelo menos dois anos, salvando milhões de vidas.";
     private String conteudoFragmentoTuring3 = "Após a guerra, Turing continuou seus estudos, contribuindo para o desenvolvimento da inteligência artificial e da biologia matemática. No entanto, em 1952, foi condenado por ser homossexual — considerado crime no Reino Unido na época. Como punição, foi submetido à castração química. Em 1954, foi encontrado morto, envenenado com cianeto, em um suposto suicídio. Tinha apenas 41 anos. Décadas depois, Turing foi reconhecido por sua genialidade e injustiça sofrida. Em 2009, o governo britânico pediu desculpas oficialmente e, em 2013, ele recebeu o perdão real.";
 
-    // Variáveis Capítulo 3 (Ada Lovelace / Futuro)
+  
     private boolean fragmentoAda1Adquirido;
     private boolean fragmentoAda2Adquirido;
     private boolean fragmentoAda3Adquirido;
-    // O Cap 3 tem uma lógica de "estrelas" diferente, baseada em tentativas, exibida diretamente.
 
     public codigosdotempo() {
         scanner = new Scanner(System.in);
@@ -43,7 +40,6 @@ public class codigosdotempo {
     }
 
     public void iniciarAventuraCompleta() {
-        // Introdução geral e nome do jogador (uma vez)
         System.out.println("====================================================================");
         System.out.println("                     CÓDIGOS DO TEMPO                               ");
         System.out.println("====================================================================");
@@ -74,7 +70,6 @@ public class codigosdotempo {
         System.out.println("Pressione ENTER para acessar o menu...");
         scanner.nextLine();
 
-        // Menu principal do jogo
         int opcaoMenuPrincipal = 0;
         while (opcaoMenuPrincipal != 4) {
             System.out.println("\n====================================================================");
@@ -90,7 +85,6 @@ public class codigosdotempo {
 
             switch (opcaoMenuPrincipal) {
                 case 1:
-                    // Resetar progresso dos capítulos antes de iniciar uma nova jornada
                     estrelasCap1 = 0;
                     fragmentosTuringCap2 = 0;
                     fragmentoAda1Adquirido = false;
@@ -137,10 +131,9 @@ public class codigosdotempo {
         }
     }
 
-    // --- CAPÍTULO 1: O SÉCULO DAS MÁQUINAS (CHARLES BABBAGE) ---
     private boolean iniciarCapitulo1() {
         boolean capituloConcluido = false;
-        estrelasCap1 = 0; // Reinicia estrelas do capítulo 1 a cada tentativa de jogar o capítulo
+        estrelasCap1 = 0;
 
         while (!capituloConcluido) {
             System.out.println("\n====================================================================");
@@ -165,16 +158,14 @@ public class codigosdotempo {
             System.out.println("Pressione ENTER para enfrentar o primeiro desafio...");
             scanner.nextLine();
 
-            // DESAFIO DAS LÂMPADAS
             boolean passouDesafio1 = desafioLampadasCap1();
             if (!passouDesafio1) {
                 System.out.println("\nVocê não conseguiu resolver o Desafio das Lâmpadas após 3 tentativas.");
                 System.out.println("Retornando ao início do capítulo 1 para tentar novamente...");
-                estrelasCap1 = 0; // Zera estrelas do cap1 antes de reiniciar
-                continue; // Volta para o início do loop do capítulo 1
+                estrelasCap1 = 0;
+                continue;
             }
 
-            // DESAFIO BINÁRIO
             boolean passouDesafio2 = desafioBinarioCap1();
             if (!passouDesafio2) {
                 System.out.println("\nVocê não conseguiu resolver o Desafio Binário após 3 tentativas.");
@@ -183,7 +174,6 @@ public class codigosdotempo {
                 continue;
             }
 
-            // DESAFIO LÓGICO
             boolean passouDesafio3 = desafioLogicoCap1();
             if (!passouDesafio3) {
                 System.out.println("\nVocê não conseguiu resolver o Desafio Lógico após 3 tentativas.");
@@ -192,7 +182,6 @@ public class codigosdotempo {
                 continue;
             }
 
-            // Se chegou até aqui, todos os desafios do capítulo 1 foram superados
             System.out.println("\n====================================================================");
             System.out.println("PARABÉNS, " + nomeJogador + "! VOCÊ COMPLETOU O CAPÍTULO 1!");
             System.out.println("TOTAL DE ESTRELAS (Cap. 1): " + estrelasCap1 + "/6");
@@ -301,10 +290,9 @@ public class codigosdotempo {
         return false;
     }
 
-    // --- CAPÍTULO 2: O CÓDEX (ALAN TURING) ---
   private boolean iniciarCapitulo2() {
         boolean capituloConcluido = false;
-        fragmentosTuringCap2 = 0; // Zera fragmentos para o capítulo 2 a cada tentativa
+        fragmentosTuringCap2 = 0;
 
      while (!capituloConcluido) {
     System.out.println("╔════════════════════════════╗");
@@ -339,7 +327,7 @@ public class codigosdotempo {
     capituloConcluido = true;
 
         }
-        return capituloConcluido; // Retorna true se o capítulo foi concluído
+        return capituloConcluido;
     }
 
     private void desenharMaquinaCap2() {
@@ -424,8 +412,7 @@ public class codigosdotempo {
             System.out.print("Radar 2 está ligado? (true/false): ");
             boolean radar2 = lerBooleano();
 
-            boolean sistemaAtivado = radar1 ^ radar2; // XOR lógico
-
+            boolean sistemaAtivado = radar1 ^ radar2;
             if (sistemaAtivado) {
                 System.out.println("\nSistema de Defesa Ativado com Sucesso!");
                 System.out.println("Os céus estão protegidos!\n");
@@ -458,7 +445,6 @@ public class codigosdotempo {
             System.out.print("Bloqueador de sinal 3 ativo? (true/false): ");
             boolean bloqueador3 = lerBooleano();
 
-            // Para que todos estejam desligados, a condição é NOT bloqueador1 AND NOT bloqueador2 AND NOT bloqueador3
             boolean terminalDesbloqueado = !bloqueador1 && !bloqueador2 && !bloqueador3;
 
             if (terminalDesbloqueado) {
@@ -493,15 +479,12 @@ public class codigosdotempo {
         System.out.println("\n⚠ Você falhou 3 vezes neste desafio! Retornando ao início do Capítulo 2 para tentar novamente...\n");
     }
 
-    // --- CAPÍTULO 3: DE VOLTA PARA 2025 (ADA LOVELACE / FUTURO) ---
     private boolean iniciarCapitulo3() {
         boolean capituloConcluido = false;
-        // Resetar fragmentos do capítulo 3
         fragmentoAda1Adquirido = false;
         fragmentoAda2Adquirido = false;
         fragmentoAda3Adquirido = false;
 
-        // Loop para permitir reiniciar o capítulo 3 em caso de falha
         while(!capituloConcluido) {
             mostrarPainelFuturista();
             System.out.println("====================================================================");
@@ -523,11 +506,9 @@ public class codigosdotempo {
             System.out.println("\nPressione ENTER para iniciar os desafios finais...");
             scanner.nextLine();
 
-            // Desafio de Ada Lovelace
             boolean passouAda = desafioAdaLovelaceCap3();
             if (!passouAda) {
                 System.out.println("Você não conseguiu completar os desafios de Ada Lovelace. Reiniciando Capítulo 3...");
-                // Resetar fragmentos do Ada se for reiniciar o capítulo
                 fragmentoAda1Adquirido = false;
                 fragmentoAda2Adquirido = false;
                 fragmentoAda3Adquirido = false;
@@ -540,7 +521,6 @@ public class codigosdotempo {
             System.out.println("\nPressione ENTER para continuar...");
             scanner.nextLine();
 
-            // Desafio Binário do Futuro
             boolean passouBinarioFuturo = desafioBinarioFuturoCap3();
             if (!passouBinarioFuturo) {
                 System.out.println("Você não conseguiu completar o Desafio Binário do Futuro. Reiniciando Capítulo 3...");
@@ -549,11 +529,6 @@ public class codigosdotempo {
                 fragmentoAda3Adquirido = false;
                 continue;
             }
-
-            // O desafioLogicoFuturo não estava sendo chamado no original, mas pode ser adicionado aqui se necessário.
-            // boolean passouLogicoFuturo = desafioLogicoFuturoCap3();
-            // if (!passouLogicoFuturo) { ... continue; }
-
 
             System.out.println("\nUm portal futurista se abre para seu retorno:");
             mostrarPortalFuturistaCap3();
@@ -567,12 +542,11 @@ public class codigosdotempo {
 
             exibirFragmentosAdaLovelace();
 
-            capituloConcluido = true; // Marca o capítulo como concluído
+            capituloConcluido = true;
         }
 
-        // Após o capítulo 3 ser concluído com sucesso, mostrar o menu final do jogo.
-        menuFinalCap3(); // Este menu tem opções de reiniciar o JOGO ou SAIR.
-        return true; // Indica que o capítulo (e potencialmente o jogo) foi concluído.
+        menuFinalCap3(); 
+        return true;
     }
 
     private void mostrarPainelFuturista() {
@@ -583,7 +557,7 @@ public class codigosdotempo {
         System.out.println("     | |    | |__) |  | || |   \\ \\  / / | |");
         System.out.println("     | |    |  ___/   | || |    > `' <    | |");
         System.out.println("     | |   _| |_      | || |  _/ /'`\\ \\_| |");
-        System.out.println("     | |  |_______|   | || | |______|____| |");
+        System.out.println("     | |  |_______|   | || | |______|____ | |");
         System.out.println("     | |              | || |              | |");
         System.out.println("     | '--------------' || '--------------' |");
         System.out.println("      '----------------'  '----------------' ");
@@ -592,7 +566,7 @@ public class codigosdotempo {
     private void mostrarRoboCap3() {
         System.out.println("     _.-^^---....,,--       ");
         System.out.println(" _--                  --_  ");
-        System.out.println("<       🤖 Olá!          >");
+        System.out.println("<         Olá!          >");
         System.out.println("|_..._           __...--   ");
         System.out.println("   /  .-'\\     /-.         ");
         System.out.println("  |   \\    /   /           ");
@@ -605,7 +579,7 @@ public class codigosdotempo {
         System.out.println("      /           \\");
         System.out.println("     /   [ O O ]   \\");
         System.out.println("    |    _______    |");
-        System.out.println("    |   | M.T.  |   |"); // M.T. = Máquina do Tempo
+        System.out.println("    |   | M.T.  |   |"); 
         System.out.println("    |   |_______|   |");
         System.out.println("    |  /         \\  |");
         System.out.println("    | /           \\ |");
@@ -688,8 +662,7 @@ public class codigosdotempo {
         while (tentativas < 3) {
             int resposta = lerInteiro("Sua resposta decimal: ");
             tentativas++;
-
-            // 10110 em binário é: (1*16) + (0*8) + (1*4) + (1*2) + (0*1) = 16 + 0 + 4 + 2 + 0 = 22
+         
             if (resposta == 22) {
                 System.out.println("\"Conectado! O ajuste foi um sucesso!\"");
                 if (tentativas == 1) {
@@ -708,7 +681,6 @@ public class codigosdotempo {
         return false;
     }
 
-    // Este desafio não estava sendo chamado, mas está aqui caso queira ativá-lo
     private boolean desafioLogicoFuturoCap3() {
         System.out.println("\n====================================================================");
         System.out.println("DESAFIO LÓGICO: SEGURANÇA QUÂNTICA");
@@ -718,7 +690,7 @@ public class codigosdotempo {
         System.out.println("Qual operação lógica representa isso?");
         System.out.println("1 - A AND B");
         System.out.println("2 - A OR B");
-        System.out.println("3 - A XOR B"); // XOR: ou um, ou outro, mas não ambos
+        System.out.println("3 - A XOR B");
 
         int tentativas = 0;
         while (tentativas < 3) {
@@ -802,8 +774,6 @@ public class codigosdotempo {
         }
     }
 
-
-    // Métodos de utilidade
     private int lerInteiro(String mensagem) {
         while (true) {
             try {
@@ -813,12 +783,7 @@ public class codigosdotempo {
                 System.out.println("Entrada inválida. Por favor, digite um número inteiro.");
                 scanner.next(); // Limpa o buffer do scanner
             } finally {
-                // Adicionado um scanner.nextLine() aqui para consumir a nova linha após nextInt()
-                // Isso evita problemas com nextLine() subsequentes que poderiam consumir uma linha vazia.
-                // No entanto, é melhor adicionar o nextLine() logo após cada nextInt() ou nextBoolean()
-                // se você sabe que uma chamada a nextLine() virá em seguida.
-                // Para este caso, o scanner.next() já limpa, mas em outras situações é vital.
-                // Para o código atual, o nextLine() após lerInteiro em 'escolha' já resolve.
+               
             }
         }
     }
@@ -837,9 +802,8 @@ public class codigosdotempo {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Por favor, digite 'true' ou 'false'.");
-                scanner.next(); // Limpa o buffer do scanner
+                scanner.next();
             } finally {
-                 // Consome o restante da linha após ler o booleano
                  scanner.nextLine();
             }
         }
@@ -861,8 +825,7 @@ public class codigosdotempo {
         System.out.println("- Colete o máximo de fragmentos possível para ter uma compreensão completa da jornada.");
         System.out.println("\nBOA SORTE, VIAJANTE DO TEMPO!");
         System.out.println("Pressione ENTER para retornar ao Menu Principal...");
-        scanner.nextLine(); // Consome a linha pendente e espera por ENTER
-    }
+        scanner.nextLine();
 
     private void mostrarRegras() {
         System.out.println("\n====================================================================");
@@ -876,6 +839,6 @@ public class codigosdotempo {
         System.out.println("6. **Saída:** Você pode sair do jogo a qualquer momento através do Menu Principal.");
         System.out.println("\nO sucesso depende da sua lógica e atenção aos detalhes!");
         System.out.println("Pressione ENTER para retornar ao Menu Principal...");
-        scanner.nextLine(); // Consome a linha pendente e espera por ENTER
+        scanner.nextLine();
     }
 }
