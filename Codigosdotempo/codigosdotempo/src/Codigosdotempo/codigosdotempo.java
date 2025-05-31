@@ -826,6 +826,7 @@ public class codigosdotempo {
         System.out.println("\nBOA SORTE, VIAJANTE DO TEMPO!");
         System.out.println("Pressione ENTER para retornar ao Menu Principal...");
         scanner.nextLine();
+    }
 
     private void mostrarRegras() {
         System.out.println("\n====================================================================");
