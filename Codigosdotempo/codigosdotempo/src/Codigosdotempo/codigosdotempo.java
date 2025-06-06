@@ -104,7 +104,7 @@ public class codigosdotempo {
                             boolean cap3Concluido = iniciarCapitulo3();
                             if (cap3Concluido) {
                                 System.out.println("\nJornada temporal completa! Você desvendou os Códigos do Tempo!");
-                                // O menu final do Cap3 já oferece opções de reiniciar ou sair.
+                                
                             } else {
                                 System.out.println("Você não conseguiu completar o Capítulo 3. Retornando ao Menu Principal.");
                             }
@@ -114,7 +114,7 @@ public class codigosdotempo {
                     } else {
                         System.out.println("Você não conseguiu completar o Capítulo 1. Retornando ao Menu Principal.");
                     }
-                    opcaoMenuPrincipal = 0; // Para exibir o menu principal novamente após a jornada
+                    opcaoMenuPrincipal = 0; 
                     break;
                 case 2:
                     mostrarComoJogar();
@@ -188,9 +188,9 @@ public class codigosdotempo {
             System.out.println("====================================================================");
             System.out.println("\"Babbage: Você seria um excelente assistente!\"");
             System.out.println("\"Uma força irresistível começa a te puxar...\"");
-            capituloConcluido = true; // Marca o capítulo como concluído para sair do loop
+            capituloConcluido = true; 
         }
-        return capituloConcluido; // Retorna true se o capítulo foi concluído
+        return capituloConcluido; 
     }
 
     private boolean desafioLampadasCap1() {
@@ -512,7 +512,7 @@ public class codigosdotempo {
                 fragmentoAda1Adquirido = false;
                 fragmentoAda2Adquirido = false;
                 fragmentoAda3Adquirido = false;
-                continue; // Reinicia o loop do Capítulo 3
+                continue; 
             }
 
             System.out.println("\nVocê acessa o painel de controle:");
@@ -738,7 +738,7 @@ public class codigosdotempo {
 
         System.out.println("---");
 
-        if (fragmentoAda3Adquirido) { // Este fragmento só é adquirido se o desafioLogicoFuturoCap3 for ativado e vencido
+        if (fragmentoAda3Adquirido) { 
             System.out.println("Fragmento 3: O Legado de Ada.");
             System.out.println("Ada Lovelace morreu jovem, aos 36 anos, mas suas notas detalhadas sobre a Máquina Analítica foram redescobertas no século XX e se tornaram fundamentais. Ela é um ícone para as mulheres na ciência e tecnologia, e sua contribuição é celebrada anualmente no Ada Lovelace Day.");
         } else {
@@ -762,15 +762,15 @@ public class codigosdotempo {
             switch (opcaoFinal) {
                 case 1:
                     System.out.println("\nReiniciando a jornada do tempo...");
-                    iniciarAventuraCompleta(); // Reinicia o jogo inteiro
-                    break; // Sai do switch e o loop `while` se mantém ativo até que a aventura completa seja concluída ou o jogador saia.
+                    iniciarAventuraCompleta(); 
+                    break; 
                 case 2:
                     System.out.println("\nObrigado por jogar Códigos do Tempo! Até a próxima aventura!");
                     break;
                 default:
                     System.out.println("Opção inválida. Por favor, escolha 1 ou 2.");
             }
-            if (opcaoFinal == 1) break; // Se o jogador escolheu reiniciar, sai do loop do menu final para permitir o `iniciarAventuraCompleta` rodar.
+            if (opcaoFinal == 1) break;
         }
     }
 
@@ -781,7 +781,7 @@ public class codigosdotempo {
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Por favor, digite um número inteiro.");
-                scanner.next(); // Limpa o buffer do scanner
+                scanner.next(); 
             } finally {
                
             }
