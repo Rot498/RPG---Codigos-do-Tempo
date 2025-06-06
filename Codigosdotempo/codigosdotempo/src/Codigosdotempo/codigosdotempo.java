@@ -323,7 +323,6 @@ public class codigosdotempo {
     }
 
     conclusaoCap2();
-    System.out.println("Parabéns, você concluiu todos os desafios com " + fragmentosTuringCap2 + "/3 fragmentos de Turing!");
     capituloConcluido = true;
 
         }
@@ -387,7 +386,7 @@ public class codigosdotempo {
                 System.out.println("Os Aliados obtiveram informações valiosas e começaram a confiar mais em você!\n");
                 if (i == 1) {
                     fragmentosTuringCap2++;
-                    System.out.println("\n**** Fragmento de Turing desbloqueado! (" + fragmentosTuringCap2 + "/3) ***\n" + conteudoFragmentoTuring1 + "\n");
+                    System.out.println("\n**** Fragmento de Turing desbloqueado!" + conteudoFragmentoTuring1 + "\n");
                 } else {
                     System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar de primeira.");
                 }
@@ -418,7 +417,7 @@ public class codigosdotempo {
                 System.out.println("Os céus estão protegidos!\n");
                 if (i == 1) {
                     fragmentosTuringCap2++;
-                    System.out.println("\n**** Fragmento de Turing desbloqueado! (" + fragmentosTuringCap2 + "/3) ***\n" + conteudoFragmentoTuring2 + "\n");
+                    System.out.println("\n**** Fragmento de Turing desbloqueado!" + conteudoFragmentoTuring2 + "\n");
                 } else {
                     System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar de primeira.");
                 }
@@ -451,7 +450,7 @@ public class codigosdotempo {
                 System.out.println("Terminal desbloqueado! Mensagem enviada com sucesso à resistência.");
                 if (i == 1) {
                     fragmentosTuringCap2++;
-                    System.out.println("\n**** Fragmento de Turing desbloqueado! (" + fragmentosTuringCap2 + "/3) ***\n" + conteudoFragmentoTuring3 + "\n");
+                    System.out.println("\n**** Fragmento de Turing desbloqueado! (" + conteudoFragmentoTuring3 + "\n");
                 } else {
                     System.out.println("Você passou no desafio, mas não ganhou o fragmento por não acertar de primeira.");
                 }
@@ -483,7 +482,7 @@ public class codigosdotempo {
         boolean capituloConcluido = false;
         fragmentoAda1Adquirido = false;
         fragmentoAda2Adquirido = false;
-        fragmentoAda3Adquirido = false;
+     
 
         while(!capituloConcluido) {
             mostrarPainelFuturista();
@@ -637,7 +636,7 @@ public class codigosdotempo {
                 System.out.println("\"Excelente! Você entendeu a base do processamento!\"");
                 if (tentativas == 1) {
                     fragmentoAda1Adquirido = true;
-                    System.out.println("\n*Fragmento de Ada Lovelace Desbloqueado (1/3)*");
+                    
                 }
                 return true;
             } else {
@@ -667,7 +666,6 @@ public class codigosdotempo {
                 System.out.println("\"Conectado! O ajuste foi um sucesso!\"");
                 if (tentativas == 1) {
                     fragmentoAda2Adquirido = true;
-                    System.out.println("\n*Fragmento de Ada Lovelace Desbloqueado (2/3)*");
                 }
                 return true;
             } else {
@@ -738,13 +736,6 @@ public class codigosdotempo {
 
         System.out.println("---");
 
-        if (fragmentoAda3Adquirido) { 
-            System.out.println("Fragmento 3: O Legado de Ada.");
-            System.out.println("Ada Lovelace morreu jovem, aos 36 anos, mas suas notas detalhadas sobre a Máquina Analítica foram redescobertas no século XX e se tornaram fundamentais. Ela é um ícone para as mulheres na ciência e tecnologia, e sua contribuição é celebrada anualmente no Ada Lovelace Day.");
-        } else {
-            System.out.println("Fragmento 3: Não adquirido (ou desafio correspondente não ativado/vencido).");
-        }
-        System.out.println("====================================================================");
     }
 
     private void menuFinalCap3() {
