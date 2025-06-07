@@ -1,4 +1,4 @@
- import java.util.InputMismatchException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class codigosdotempo {
@@ -292,7 +292,6 @@ public class codigosdotempo {
 
   private boolean iniciarCapitulo2() {
         boolean capituloConcluido = false;
-        fragmentosTuringCap2 = 0;
 
      while (!capituloConcluido) {
     System.out.println("╔════════════════════════════╗");
